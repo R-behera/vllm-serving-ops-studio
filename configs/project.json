@@ -1,0 +1,114 @@
+{
+  "slug": "vllm-serving-ops-studio",
+  "title": "vLLM Serving Ops Studio",
+  "project_type": "llm",
+  "domain": "LLM Serving",
+  "summary": "Create a serving operations console for LLM inference, throughput, queueing, and latency-aware deployment decisions.",
+  "tags": [
+    "vllm",
+    "serving",
+    "llmops",
+    "inference"
+  ],
+  "accent": "#c82c87",
+  "secondary_accent": "#372ca9",
+  "dashboard_metrics": [
+    {
+      "label": "Resolution Rate",
+      "value": "67%",
+      "delta": "+5.8%"
+    },
+    {
+      "label": "Answer Quality",
+      "value": "92%",
+      "delta": "+2.2%"
+    },
+    {
+      "label": "Ops Time Saved",
+      "value": "14h",
+      "delta": "+3h"
+    }
+  ],
+  "sample_features": {
+    "query": "Summarize the highest priority risk and recommended next step.",
+    "audience": "analytics"
+  },
+  "sample_metrics": {
+    "acquisition": 55.6,
+    "activation": 51.0,
+    "retention": 61.2,
+    "revenue": 104.2
+  },
+  "knowledge_base": [
+    "vLLM Serving Ops Studio is positioned as a LLM Serving starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.",
+    "The primary value proposition is: Create a serving operations console for LLM inference, throughput, queueing, and latency-aware deployment decisions.",
+    "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
+    "Typical stakeholders include analytics, operations, product, and leadership teams working on vllm, serving, llmops, inference.",
+    "Source paper: Efficient Memory Management for Large Language Model Serving with PagedAttention",
+    "Official repo: https://github.com/vllm-project/vllm",
+    "Production differentiation focus: Wrap the upstream llm serving capability in a reviewable operator workflow instead of a single demo script.; Surface latency, quality, and execution traces so the system feels deployment-ready rather than experimental.; Design a distinct UI and reporting layer that makes the project portfolio-friendly and easier to explain."
+  ],
+  "research_key": "vllm-serving-ops-studio",
+  "research_score": 9.838,
+  "paper_title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+  "paper_url": "https://arxiv.org/abs/2309.06180",
+  "repo_url": "https://github.com/vllm-project/vllm",
+  "repo_org": "vllm-project",
+  "why_high_score": [
+    "Official or primary upstream repo with 76769 GitHub stars.",
+    "Active maintenance signal with recent push at 2026-04-16T01:21:20Z.",
+    "A high-throughput and memory-efficient inference and serving engine for LLMs"
+  ],
+  "differentiation_hooks": [
+    "Wrap the upstream llm serving capability in a reviewable operator workflow instead of a single demo script.",
+    "Surface latency, quality, and execution traces so the system feels deployment-ready rather than experimental.",
+    "Design a distinct UI and reporting layer that makes the project portfolio-friendly and easier to explain."
+  ],
+  "app_archetype": "copilot",
+  "ui_profile": {
+    "layout": "rail",
+    "surface": "ink",
+    "font_stack": "\"Plus Jakarta Sans\", \"Segoe UI\", sans-serif",
+    "radius": 25,
+    "shadow": 51,
+    "eyebrow_style": "soft",
+    "module_columns": 3,
+    "hero_align": "center",
+    "headline_mode": "tall"
+  },
+  "app_modules": [
+    {
+      "label": "Workflow 01",
+      "title": "Routing Simulator",
+      "description": "Preview how a request gets prioritized or routed through the workflow.",
+      "endpoint": "/score",
+      "input_mode": "json",
+      "cta": "Simulate Route",
+      "prefill": "{\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"analytics\"\n  }\n}",
+      "hint": "Routing score and top signals will appear here.",
+      "span": "normal"
+    },
+    {
+      "label": "Workflow 02",
+      "title": "Operator Brief",
+      "description": "Generate a concise recommended action set for the current workflow state.",
+      "endpoint": "/recommend",
+      "input_mode": "json",
+      "cta": "Generate Brief",
+      "prefill": "{\n  \"prompt\": \"Recommend the next best action for vLLM Serving Ops Studio.\",\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"analytics\"\n  },\n  \"metrics\": {\n    \"acquisition\": 55.6,\n    \"activation\": 51.0,\n    \"retention\": 61.2,\n    \"revenue\": 104.2\n  }\n}",
+      "hint": "Operator brief and recommended actions will appear here.",
+      "span": "wide"
+    },
+    {
+      "label": "Workflow 03",
+      "title": "Grounded Prompt",
+      "description": "Ask a targeted question and inspect the support context behind the answer.",
+      "endpoint": "/query",
+      "input_mode": "text",
+      "cta": "Run Prompt",
+      "prefill": "What is the top priority recommendation for vLLM Serving Ops Studio?",
+      "hint": "Grounded answer and context excerpts will appear here.",
+      "span": "normal"
+    }
+  ]
+}

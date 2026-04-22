@@ -1,52 +1,35 @@
-
 # vLLM Serving Ops Studio
 
 ![Demo Screenshot](demo/screenshot.png)
 
-## Overview
-Create a serving operations console for LLM inference, throughput, queueing, and latency-aware deployment decisions.
+## What this repo now includes
 
-This project is part of a 50-project portfolio covering data science, AI, LLM, RAG, and product analytics use cases across finance, health, retail, cybersecurity, developer tools, and enterprise workflows.
+- Production-style `FastAPI` application scaffold
+- API endpoints for manifest, readiness, and showcase signals
+- 3D immersive static landing page in `docs/` for GitHub Pages
+- Docker packaging, Compose file, smoke test, and CI workflow
 
-## Project Profile
-- Domain: LLM Serving
-- Project type: `llm`
-- Tags: vllm, serving, llmops, inference
+## Primary audience
 
-## Quick Start
+operations lead
+
+## Domain
+
+Applied AI product systems
+
+## Run locally
+
 ```bash
-python -m venv .venv
-source .venv/bin/activate
 pip install -r requirements.txt
-python scripts/bootstrap_data.py
-uvicorn src.app.main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn src.app.main:app --reload
 ```
 
-Open `http://localhost:8000/` to use the interactive application.
+## Surfaces
 
-## Key Endpoints
-- `GET /`
-- `GET /health`
-- `GET /bootstrap`
-- `GET /project`
-- `POST /score`
-- `POST /analyze`
-- `POST /query`
-- `POST /recommend`
+- App: `src/app/main.py`
+- Landing page: `docs/index.html`
+- GitHub Pages target: `https://r-behera.github.io/vllm-serving-ops-studio/`
 
-## Structure
-```text
-vllm-serving-ops-studio/
-|- configs/
-|- data/
-|- demo/
-|- docs/
-|- scripts/
-|- src/app/
-|- src/app/web/
-|- tests/
-|- .github/workflows/
-|- Dockerfile
-|- docker-compose.yml
-|- Makefile
-```
+## Production notes
+
+See `docs/deployment.md` for a simple deployment path and GitHub Pages guidance.

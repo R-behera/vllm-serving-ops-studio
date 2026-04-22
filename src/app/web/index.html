@@ -1,95 +1,29 @@
-
-        <!doctype html>
-        <html lang="en">
-        <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title>vLLM Serving Ops Studio</title>
-          <link rel="stylesheet" href="./styles.css">
-        </head>
-        <body class="surface-ink">
-          <div class="page layout-rail eyebrow-soft headline-tall modules-3 hero-align-center">
-            <section class="hero">
-              <div class="panel hero-copy">
-                <span class="eyebrow" data-health>Workflow Copilot</span>
-                <h1 id="project-title">vLLM Serving Ops Studio</h1>
-                <p id="project-summary" class="lead">Create a serving operations console for LLM inference, throughput, queueing, and latency-aware deployment decisions.</p>
-                <ul id="project-tags" class="tag-list">
-                  <li>vllm</li><li>serving</li><li>llmops</li><li>inference</li>
-                </ul>
-              </div>
-              <div class="panel hero-side">
-                <div class="metric-grid">
-                  <article class='card'><span>Resolution Rate</span><strong>67%</strong><em>+5.8%</em></article>
-<article class='card'><span>Answer Quality</span><strong>92%</strong><em>+2.2%</em></article>
-<article class='card'><span>Ops Time Saved</span><strong>14h</strong><em>+3h</em></article>
-                </div>
-                <div class="mini-grid">
-                  <article class='mini-card'><span>Project Type</span><strong>LLM</strong></article><article class='mini-card'><span>Domain</span><strong>LLM Serving</strong></article><article class='mini-card'><span>Application</span><strong>Workflow Copilot</strong></article><article class='mini-card'><span>Deployment</span><strong>Docker + CI</strong></article>
-                </div>
-              </div>
-            </section>
-            <section class="app-grid">
-              <article class="panel module js-module span-normal">
-          <div class="module-header">
-            <span>Workflow 01</span>
-            <h2>Routing Simulator</h2>
-            <p>Preview how a request gets prioritized or routed through the workflow.</p>
-          </div>
-          <textarea class="js-input">{
-  &quot;features&quot;: {
-    &quot;query&quot;: &quot;Summarize the highest priority risk and recommended next step.&quot;,
-    &quot;audience&quot;: &quot;analytics&quot;
-  }
-}</textarea>
-          <div class="button-row">
-            <button class="js-run" data-endpoint="/score" data-input-mode="json">Simulate Route</button>
-          </div>
-          <pre class="js-output">Routing score and top signals will appear here.</pre>
-        </article>
-<article class="panel module js-module span-wide">
-          <div class="module-header">
-            <span>Workflow 02</span>
-            <h2>Operator Brief</h2>
-            <p>Generate a concise recommended action set for the current workflow state.</p>
-          </div>
-          <textarea class="js-input">{
-  &quot;prompt&quot;: &quot;Recommend the next best action for vLLM Serving Ops Studio.&quot;,
-  &quot;features&quot;: {
-    &quot;query&quot;: &quot;Summarize the highest priority risk and recommended next step.&quot;,
-    &quot;audience&quot;: &quot;analytics&quot;
-  },
-  &quot;metrics&quot;: {
-    &quot;acquisition&quot;: 55.6,
-    &quot;activation&quot;: 51.0,
-    &quot;retention&quot;: 61.2,
-    &quot;revenue&quot;: 104.2
-  }
-}</textarea>
-          <div class="button-row">
-            <button class="js-run" data-endpoint="/recommend" data-input-mode="json">Generate Brief</button>
-          </div>
-          <pre class="js-output">Operator brief and recommended actions will appear here.</pre>
-        </article>
-<article class="panel module js-module span-normal">
-  <div class="module-header">
-    <span>Workflow 03</span>
-    <h2>Grounded Prompt</h2>
-    <p>Ask a targeted question and inspect the support context behind the answer.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vLLM Serving Ops Studio App</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <div id="scene" class="app-scene">
+    <header class="shell hero">
+      <div>
+        <span class="eyebrow">Applied AI product systems</span>
+        <h1>vLLM Serving Ops Studio</h1>
+        <p>![Demo Screenshot](demo/screenshot.png)</p>
+      </div>
+      <aside class="status-card">
+        <div class="pill">API connected</div>
+        <div class="pill">operations lead</div>
+        <div class="pill">neural-ribbon</div>
+      </aside>
+    </header>
+    <section id="metrics" class="grid metrics"></section>
+    <section id="signals" class="grid signals"></section>
   </div>
-  <textarea class="js-input module-input-text">What is the top priority recommendation for vLLM Serving Ops Studio?</textarea>
-  <div class="button-row">
-    <button class="js-run" data-endpoint="/query" data-input-mode="text">Run Prompt</button>
-  </div>
-  <pre class="js-output">Grounded answer and context excerpts will appear here.</pre>
-</article>
-            </section>
-            <footer class="footer">
-              <span>LLM Serving • LLM • Workflow Copilot</span>
-              <span>vllm-serving-ops-studio</span>
-            </footer>
-          </div>
-          <script id="bootstrap-data" type="application/json">{"project": {"slug": "vllm-serving-ops-studio", "title": "vLLM Serving Ops Studio", "project_type": "llm", "domain": "LLM Serving", "summary": "Create a serving operations console for LLM inference, throughput, queueing, and latency-aware deployment decisions.", "tags": ["vllm", "serving", "llmops", "inference"]}, "app_archetype": "copilot", "ui_profile": {"layout": "rail", "surface": "ink", "font_stack": "\"Plus Jakarta Sans\", \"Segoe UI\", sans-serif", "radius": 25, "shadow": 51, "eyebrow_style": "soft", "module_columns": 3, "hero_align": "center", "headline_mode": "tall"}, "app_modules": [{"label": "Workflow 01", "title": "Routing Simulator", "description": "Preview how a request gets prioritized or routed through the workflow.", "endpoint": "/score", "input_mode": "json", "cta": "Simulate Route", "prefill": "{\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"analytics\"\n  }\n}", "hint": "Routing score and top signals will appear here.", "span": "normal"}, {"label": "Workflow 02", "title": "Operator Brief", "description": "Generate a concise recommended action set for the current workflow state.", "endpoint": "/recommend", "input_mode": "json", "cta": "Generate Brief", "prefill": "{\n  \"prompt\": \"Recommend the next best action for vLLM Serving Ops Studio.\",\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"analytics\"\n  },\n  \"metrics\": {\n    \"acquisition\": 55.6,\n    \"activation\": 51.0,\n    \"retention\": 61.2,\n    \"revenue\": 104.2\n  }\n}", "hint": "Operator brief and recommended actions will appear here.", "span": "wide"}, {"label": "Workflow 03", "title": "Grounded Prompt", "description": "Ask a targeted question and inspect the support context behind the answer.", "endpoint": "/query", "input_mode": "text", "cta": "Run Prompt", "prefill": "What is the top priority recommendation for vLLM Serving Ops Studio?", "hint": "Grounded answer and context excerpts will appear here.", "span": "normal"}], "sample_features": {"query": "Summarize the highest priority risk and recommended next step.", "audience": "analytics"}, "sample_metrics": {"acquisition": 55.6, "activation": 51.0, "retention": 61.2, "revenue": 104.2}, "knowledge_base": ["vLLM Serving Ops Studio is positioned as a LLM Serving starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.", "The primary value proposition is: Create a serving operations console for LLM inference, throughput, queueing, and latency-aware deployment decisions.", "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.", "Typical stakeholders include analytics, operations, product, and leadership teams working on vllm, serving, llmops, inference.", "Source paper: Efficient Memory Management for Large Language Model Serving with PagedAttention", "Official repo: https://github.com/vllm-project/vllm", "Production differentiation focus: Wrap the upstream llm serving capability in a reviewable operator workflow instead of a single demo script.; Surface latency, quality, and execution traces so the system feels deployment-ready rather than experimental.; Design a distinct UI and reporting layer that makes the project portfolio-friendly and easier to explain."], "dashboard_metrics": [{"label": "Resolution Rate", "value": "67%", "delta": "+5.8%"}, {"label": "Answer Quality", "value": "92%", "delta": "+2.2%"}, {"label": "Ops Time Saved", "value": "14h", "delta": "+3h"}]}</script>
-          <script src="./app.js"></script>
-        </body>
-        </html>
+  <script>window.PROJECT_MANIFEST = {"slug": "vllm-serving-ops-studio", "title": "vLLM Serving Ops Studio", "summary": "![Demo Screenshot](demo/screenshot.png)", "domain": "Applied AI product systems", "audience": "operations lead", "promise": "Turn promising technical capability into a production-shaped workflow for real teams.", "hero": ["Production-grade app scaffold with API, CI, tests, Docker, and GitHub Pages landing.", "3D landing surface designed for GitHub Pages and recruiter-friendly storytelling.", "App backend structured for local or container deployment without changing the product narrative."], "kpis": [{"label": "Workflow clarity", "value": "91%", "note": "Operator actions mapped to product stages"}, {"label": "Deployment posture", "value": "API + Docker", "note": "Local and containerized startup paths"}, {"label": "Presentation layer", "value": "3D Pages ready", "note": "Static GitHub landing page included"}], "stages": ["ingest", "validate", "analyze", "decide", "monitor"], "cards": [{"title": "Operator cockpit", "body": "One-screen surface for the operations lead to understand what matters first."}, {"title": "API contract", "body": "Structured endpoints for health, manifest, readiness, and showcase data."}, {"title": "Deployment path", "body": "Repository includes Docker, Compose, CI workflow, and a Pages-ready landing surface."}], "scene": "neural-ribbon", "theme": {"bg": "#0f0c07", "surface": "#1f1811", "ink": "#fff8ef", "muted": "#cab59a", "accent": "#ffb15e", "accent2": "#7ef7d0"}, "pages_url": "https://r-behera.github.io/vllm-serving-ops-studio/", "api_examples": {"health": {"status": "ok", "project": "vllm-serving-ops-studio"}, "readiness": {"api": "ready", "landing_page": "docs/index.html", "container": "Dockerfile present"}, "signals": [{"name": "Decision coverage", "status": "strong", "detail": "App and landing narrative aligned"}, {"name": "Operator context", "status": "strong", "detail": "Primary user anchored as operations lead"}, {"name": "Delivery path", "status": "ready", "detail": "Pages + containerized app scaffold generated"}]}};</script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
